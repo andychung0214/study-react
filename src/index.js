@@ -31,15 +31,17 @@ const element = (
 const element2 = <div tableIndex="0">Test Div</div>;
 const element3 = <img src={user.avatarUrl}></img>
 
+const title = 'Hello!!!!';
+
 const element4 = (
   <div>
-    <h1>Hello!</h1>
+    <h1>{title}</h1>
     <h2>Good to see you here.</h2>
   </div>
 )
 
 ReactDOM.render(
-  element3,
+  element4,
   document.getElementById('root')
 );
 
