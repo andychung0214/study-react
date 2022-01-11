@@ -26,9 +26,15 @@ function tick() {
   ReactDOM.render(elementDT, document.getElementById('root'));
 }
 
-setInterval(() => {
-  tick();
-}, 1000);
+function Welcome(props){
+  return <h1>Hello, {props.name}</h1>
+}
+
+const elementWelcome = <Welcome name="Sara" />;
+
+// setInterval(() => {
+//   tick();
+// }, 1000);
 
 const user = {
   firstName: 'Harper',
@@ -54,10 +60,10 @@ const element4 = (
   </div>
 )
 
-// ReactDOM.render(
-//   elementDT,
-//   document.getElementById('root')
-// );
+ReactDOM.render(
+  elementWelcome,
+  document.getElementById('root')
+);
 
 
 // If you want to start measuring performance in your app, pass a function
