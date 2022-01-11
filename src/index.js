@@ -16,6 +16,20 @@ function getGreeting(user){
   return <h1>Hello, Stranger</h1>
 }
 
+function tick() {
+  const elementDT = (
+    <div>
+      <h1>Hello, World</h1>
+      <h2>It is {new Date().toLocaleTimeString()}.</h2>
+    </div>
+  );
+  ReactDOM.render(elementDT, document.getElementById('root'));
+}
+
+setInterval(() => {
+  tick();
+}, 1000);
+
 const user = {
   firstName: 'Harper',
   lastName: 'Perez',
@@ -40,10 +54,10 @@ const element4 = (
   </div>
 )
 
-ReactDOM.render(
-  element4,
-  document.getElementById('root')
-);
+// ReactDOM.render(
+//   elementDT,
+//   document.getElementById('root')
+// );
 
 
 // If you want to start measuring performance in your app, pass a function
