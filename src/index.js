@@ -18,7 +18,8 @@ function getGreeting(user){
 
 const user = {
   firstName: 'Harper',
-  lastName: 'Perez'
+  lastName: 'Perez',
+  avatarUrl: 'https://www.google.com.tw'
 };
 
 const element = (
@@ -26,6 +27,9 @@ const element = (
     {getGreeting(user)}
   </h1>
 )
+
+const element2 = <div tableIndex="0"></div>;
+const element3 = <img src={user.avatarUrl}></img>
 
 
 ReactDOM.render(
