@@ -19,7 +19,7 @@ function getGreeting(user){
 const user = {
   firstName: 'Harper',
   lastName: 'Perez',
-  avatarUrl: 'https://www.google.com.tw'
+  avatarUrl: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'
 };
 
 const element = (
@@ -28,12 +28,18 @@ const element = (
   </h1>
 )
 
-const element2 = <div tableIndex="0"></div>;
+const element2 = <div tableIndex="0">Test Div</div>;
 const element3 = <img src={user.avatarUrl}></img>
 
+const element4 = (
+  <div>
+    <h1>Hello!</h1>
+    <h2>Good to see you here.</h2>
+  </div>
+)
 
 ReactDOM.render(
-   element,
+  element3,
   document.getElementById('root')
 );
 
