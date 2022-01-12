@@ -9,6 +9,38 @@ function formatName(user){
   return user.firstName + '' + user.lastName
 }
 
+function formatDate(date){
+  return date.toLocaleTimeString();
+}
+
+function Comment(props){
+  return (
+    <div className="Comment">
+      <div className="UserInfo">
+        <img className="Avatar" src={props.author.avatarUrl} alt={props.author.name}></img>
+        <div className="UserInfo-name">
+          {props.author.name}
+        </div>
+      </div>
+      <div className="Comment-text">{props.text}</div>
+      <div className="Comment-text">
+        {formatDate(props.date)}
+        </div>
+
+    </div>
+  );
+}
+
+
+const comment = {
+  date: new Date(),
+  text: 'I Wish Travel to Kyoto',
+  author:{
+    name: 'andy',
+    avatarUrl: 'https://images.unsplash.com/photo-1578469645742-46cae010e5d4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'
+  },
+}
+
 function getGreeting(user){
   if (user) {
     return <h1>Hello, {formatName(user)}</h1>
@@ -73,7 +105,7 @@ const element4 = (
 )
 
 ReactDOM.render(
-  <AppCopy />,
+  <Comment date={comment.date} text = {comment.text} author={comment.author} />,
   document.getElementById('root')
 );
 
