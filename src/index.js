@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './App';
+import HelloWorld from './HelloWorld';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+// import * as serviceWorker from './serviceWorker';
 
 const testFunction =()=>{
   return (
@@ -27,8 +30,25 @@ const multiButton = () =>{
   return output;
 }
 
+function Progress(){
+  const barWidth = "50%";
+  return (
+    <div>
+      <div className="progress-back" style={{backgroundColor: "rgba(0,0,0,0.2)", width:"200px", height:"7px",borderRadius:"10px"}}></div>
+      <div className="progress-bar" style={{backgroundColor: "#fe5196", width:barWidth, height:"100%",borderRadius:"10px"}}></div>
+    </div>
+  );
+}
+
 ReactDOM.render(
-  multiButton(),
+  <React.StrictMode>
+  <div>
+    <App />
+    <App />
+    <App />
+    <App />
+  </div>
+  </React.StrictMode>,
   document.getElementById('root')
 );
 
@@ -36,3 +56,4 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals(console.log);
+// serviceWorker.unregister();
