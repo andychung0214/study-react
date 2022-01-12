@@ -26,15 +26,27 @@ function tick() {
   ReactDOM.render(elementDT, document.getElementById('root'));
 }
 
+// setInterval(() => {
+//   tick();
+// }, 1000);
+
 function Welcome(props){
   return <h1>Hello, {props.name}</h1>
 }
 
 const elementWelcome = <Welcome name="Sara" />;
 
-// setInterval(() => {
-//   tick();
-// }, 1000);
+function AppCopy(){
+  return(
+    <div>
+      <Welcome name="Sara" />
+      <Welcome name="Bob" />
+      <Welcome name="Tom" />
+      <Welcome name="Joe" />
+    </div>
+  );
+}
+
 
 const user = {
   firstName: 'Harper',
@@ -61,9 +73,7 @@ const element4 = (
 )
 
 ReactDOM.render(
-  <React.StrictMode>
-    <HelloWorld />
-  </React.StrictMode>,
+  <AppCopy />,
   document.getElementById('root')
 );
 
