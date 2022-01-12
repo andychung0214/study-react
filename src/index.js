@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Hello from './HelloWorld';
+import { HelloWorld } from "./HelloWorld";
 
 function formatName(user){
   return user.firstName + '' + user.lastName
@@ -61,7 +61,9 @@ const element4 = (
 )
 
 ReactDOM.render(
-  elementWelcome,
+  <React.StrictMode>
+    <HelloWorld />
+  </React.StrictMode>,
   document.getElementById('root')
 );
 

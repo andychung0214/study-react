@@ -1,12 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 
-function Hello(){
+function HelloWorld(){
     return(
-        <div className='App'>
-            <input type='text'>Hello World</input>
+        <div>
+            <h1>Hello World</h1>
         </div>
     );
 }
 
-export default Hello();
+export default HelloWorld();
