@@ -28,7 +28,7 @@ function Comment(props){
 
 function Avatar(props){
   return (
-    <img className="Avatar" src={props.user.avatarUrl} alt={props.user.name}></img>
+    <img className="Avatar" width="620" height="444" src={props.user.avatarUrl} alt={props.user.name}></img>
   )
 }
 
