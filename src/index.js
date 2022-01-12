@@ -3,8 +3,32 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
+const testFunction =()=>{
+  return (
+    <div>
+      <button>大家好</button>)
+      <h1>test</h1>
+    </div>
+  );
+}
+
+const showOne = true;
+const styleArgument = {
+  fontSize: '24px',
+  color: 'green'
+};
+
+const multiButton = () =>{
+  var output = [];
+  for (let index = 0; index < 4; index++) {
+    output.push(<button>我是第{index}按鍵</button>)
+    
+  }
+  return output;
+}
+
 ReactDOM.render(
-  <h1>Hello World</h1>,
+  multiButton(),
   document.getElementById('root')
 );
 
