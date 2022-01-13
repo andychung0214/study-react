@@ -81,11 +81,20 @@ const printMessage=()=>{
   document.getElementById('show-area').innerHTML = "我被按到了";
 }
 
+function NumberList(props){
+  const numbers = props.numbers;
+  const listItems = numbers.map((number) =>
+    <li>{number}</li>
+  );
+  return (
+  <ul>{listItems}</ul>
+  );
+}
+
+
 ReactDOM.render(
   <React.StrictMode>
-  <ul>
-    {listItems}
-  </ul>
+  <NumberList numbers = {numbers} />
   </React.StrictMode>,
   document.getElementById('root')
 );
