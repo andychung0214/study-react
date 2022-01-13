@@ -72,6 +72,10 @@ function LogoutButton(props){
   );
 }
 
+const numbers = [1,2,3,4,5];
+const listItems = numbers.map((number) =>
+  <li>{number}</li>
+);
 
 const printMessage=()=>{
   document.getElementById('show-area').innerHTML = "我被按到了";
@@ -79,10 +83,9 @@ const printMessage=()=>{
 
 ReactDOM.render(
   <React.StrictMode>
-  <div>
-    <Greeting isLoggedIn={true} />
-    {/* {button} */}
-  </div>
+  <ul>
+    {listItems}
+  </ul>
   </React.StrictMode>,
   document.getElementById('root')
 );
