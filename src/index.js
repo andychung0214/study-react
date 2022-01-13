@@ -56,6 +56,23 @@ function Greeting(props){
   return <GuestGreeting />
 }
 
+function LoginButton(props){
+  return (
+<button onclick={props.onclick}>
+  Login
+</button>
+  );
+}
+
+function LogoutButton(props){
+  return (
+<button onclick={props.onclick}>
+  Logout
+</button>
+  );
+}
+
+
 const printMessage=()=>{
   document.getElementById('show-area').innerHTML = "我被按到了";
 }
@@ -64,7 +81,7 @@ ReactDOM.render(
   <React.StrictMode>
   <div>
     <Greeting isLoggedIn={true} />
-
+    {/* {button} */}
   </div>
   </React.StrictMode>,
   document.getElementById('root')
