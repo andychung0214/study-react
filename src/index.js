@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import HelloWorld from './HelloWorld';
@@ -99,33 +99,39 @@ function NumberList(props){
 // )
 
 const apiUrl = "https://hn.algolia.com/api/v1/search";
-const token = "Bearer " + "我存好的Token";
-const data = { A: "資料A", B: "資料B"};
-const formData = Object.keys(data).map(
-  function(keyName){
-    return encodeURIComponent(keyName) + '=' + encodeURIComponent(data[keyName])
-  }
-).join('&');
 
-fetch(apiUrl,{
-  method: "GET",
-  body: formData,
-  headers: new Headers({
-    'Content-Type': 'application/json',
-    'Authorization': token,
-  })
-})
-.then(res => res.json()).then(data => {
+//'https://api.github.com/users/使用者名稱/repos"
+const gitApiUrl = "https://api.github.com/users/andychung0214/repos";
+
+
+// const token = "Bearer " + "我存好的Token";
+// const data = { A: "資料A", B: "資料B"};
+// const formData = Object.keys(data).map(
+//   function(keyName){
+//     return encodeURIComponent(keyName) + '=' + encodeURIComponent(data[keyName])
+//   }
+// ).join('&');
+
+// fetch(gitApiUrl, {
+//   method: "GET",
+//   body: formData,
+//   headers: new Headers({
+//     'Content-Type': 'application/json',
+//     'Authorization': token,
+//   })
+// })
+// .then(res => res.json()).then(data => {
   
-})
-.catch(e => {
+// })
+// .catch(e => {
 
-})
+// })
+
 
 
 ReactDOM.render(
   <React.StrictMode>
-  <Progress />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
