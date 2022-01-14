@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import Progress  from './Progress';
 import  EffectExample  from './EffectExample';
 import  StateExample  from './StateExample';
+import { useEffect } from 'react/cjs/react.production.min';
 // import * as serviceWorker from './serviceWorker';
 
 const testFunction =()=>{
@@ -129,6 +130,25 @@ const gitApiUrl = "https://api.github.com/users/andychung0214/repos";
 
 // })
 
+function FriendStatus(props){
+  const [isOnline, setIsOnline] = useState(null);
+
+  // useEffect(() =>{
+  //   function handleStatusChange(status){
+  //     setIsOnline(status.isOnline);
+  //   }
+  //   ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);
+
+  //   return function cleanup(){
+  //     ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);
+  //   }
+  // })
+
+  if (isOnline === null) {
+    return 'Loading....';
+  }
+  return isOnline ? 'Online': 'Offline';
+}
 
 
 ReactDOM.render(
