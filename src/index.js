@@ -8,6 +8,7 @@ import Progress  from './Progress';
 import  EffectExample  from './EffectExample';
 import  StateExample  from './StateExample';
 import { useEffect } from 'react/cjs/react.production.min';
+import ProgressDIY from "./ProgressDIY";
 // import * as serviceWorker from './serviceWorker';
 
 const testFunction =()=>{
