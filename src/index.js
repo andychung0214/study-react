@@ -5,6 +5,8 @@ import HelloWorld from './HelloWorld';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Progress  from './Progress';
+import  EffectExample  from './EffectExample';
+import  StateExample  from './StateExample';
 // import * as serviceWorker from './serviceWorker';
 
 const testFunction =()=>{
@@ -131,7 +133,7 @@ const gitApiUrl = "https://api.github.com/users/andychung0214/repos";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <EffectExample />
   </React.StrictMode>,
   document.getElementById('root')
 );
