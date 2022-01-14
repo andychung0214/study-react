@@ -101,11 +101,15 @@ function NumberList(props){
 const apiUrl = "https://hn.algolia.com/api/v1/search";
 const token = "Bearer " + "我存好的Token";
 const data = { A: "資料A", B: "資料B"};
-
+const formData = Object.keys(data).map(
+  function(keyName){
+    return encodeURIComponent(keyName) + '=' + encodeURIComponent(data[keyName])
+  }
+).join('&');
 
 fetch(apiUrl,{
   method: "GET",
-  body: JSON.stringify(data),
+  body: formData,
   headers: new Headers({
     'Content-Type': 'application/json',
     'Authorization': token,
