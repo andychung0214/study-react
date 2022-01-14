@@ -4,6 +4,7 @@ import App from './App';
 import HelloWorld from './HelloWorld';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+import Progress  from './Progress';
 // import * as serviceWorker from './serviceWorker';
 
 const testFunction =()=>{
@@ -30,15 +31,15 @@ const multiButton = () =>{
   return output;
 }
 
-function Progress(){
-  const barWidth = "50%";
-  return (
-    <div>
-      <div className="progress-back" style={{backgroundColor: "rgba(0,0,0,0.2)", width:"200px", height:"7px",borderRadius:"10px"}}></div>
-      <div className="progress-bar" style={{backgroundColor: "#fe5196", width:barWidth, height:"100%",borderRadius:"10px"}}></div>
-    </div>
-  );
-}
+// function Progress(){
+//   const barWidth = "50%";
+//   return (
+//     <div>
+//       <div className="progress-back" style={{backgroundColor: "rgba(0,0,0,0.2)", width:"200px", height:"7px",borderRadius:"10px"}}></div>
+//       <div className="progress-bar" style={{backgroundColor: "#fe5196", width:barWidth, height:"100%",borderRadius:"10px"}}></div>
+//     </div>
+//   );
+// }
 
 function UserGreeting(){
   return <h1>Welcome back!</h1>;
@@ -84,17 +85,24 @@ const printMessage=()=>{
 function NumberList(props){
   const numbers = props.numbers;
   const listItems = numbers.map((number) =>
-    <li>{number}</li>
+    <li key={number.toString()}>{number}</li>
   );
   return (
   <ul>{listItems}</ul>
   );
 }
 
+// const todoItems =  todos.map((todo) =>
+//   <li key={todo.id}> 
+// {todo.text}
+//   </li>
+// )
+
+
 
 ReactDOM.render(
   <React.StrictMode>
-  <NumberList numbers = {numbers} />
+  <Progress />
   </React.StrictMode>,
   document.getElementById('root')
 );
