@@ -153,7 +153,7 @@ function FriendStatus(props){
 
 ReactDOM.render(
   <React.StrictMode>
-    <EffectExample />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

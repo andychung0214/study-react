@@ -1,37 +1,31 @@
 import React, { useState } from 'react';
 import './App.css';
+import Baby from "./Baby";
 
 function App(props) {
-  const [repoName, setRepoName] = useState(null);
+  const [dad, setDad] = useState("Chang");
+  const [born, setBorn] = useState(true);
 
-  function handleClick(){
-    fetch("https://api.github.com/users/andychung0214/repos",{method:"GET"})
-    .then(res => res.json())
-    .then(data => {
-          /*接到request data後要做的事情*/
-          console.log("data=", data);
-          console.log("data[0]=", data[0]);
-          console.log("data[0]['name']=", data[0]['name']);
+  const changeDad = () =>{
+    if (dad === "Chang") {
+      setDad("Wang")
+    }else{
+      setDad("Chang")
+    }
+  }
 
-          const dataRepoName = Array.from({ length: data.length }).map((el, index) => ([{ name: `${data[index]['name']}`, id: `${data[index]['id']}` }]));
-
-          setRepoName(dataRepoName);
-    })
-    .catch(e => {
-        /*發生錯誤時要做的事情*/
-        console.log(e);
-    })
-  };
+  const spawnBaby = () =>{
+    if (born === true) {
+      return <Baby dad={dad} />
+    }
+  }
 
   return (
-    <div className="App">
-      <div className="data-display">
-        {(repoName === null) ? 
-        "目前還有沒有資料" : repoName.map((value) => (
-          <h1 key={value[0].id.toString()}>{ value[0].name }</h1>
-        )) }
-      </div>
-      <button onClick={handleClick}>取得jserv以英文字母排序的第一個repo</button>
+    <div>
+      {spawnBaby()}
+      <div id="talk"></div>
+      <button onClick={changeDad}>換爸爸!</button>
+      <button onClick={()=>{setBorn(!born)}}>{(born===true)?"讓他回去肚子裡":"讓他生"}</button>
     </div>
   );
 }
