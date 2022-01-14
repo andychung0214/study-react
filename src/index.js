@@ -98,6 +98,25 @@ function NumberList(props){
 //   </li>
 // )
 
+const apiUrl = "https://hn.algolia.com/api/v1/search";
+const token = "Bearer " + "我存好的Token";
+const data = { A: "資料A", B: "資料B"};
+
+
+fetch(apiUrl,{
+  method: "GET",
+  body: JSON.stringify(data),
+  headers: new Headers({
+    'Content-Type': 'application/json',
+    'Authorization': token,
+  })
+})
+.then(res => res.json()).then(data => {
+  
+})
+.catch(e => {
+
+})
 
 
 ReactDOM.render(
