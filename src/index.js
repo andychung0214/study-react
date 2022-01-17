@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Routes, Route, useRoutes, HashRouter, Switch } from "react-router-dom";
+
 import App from './App';
 import HelloWorld from './HelloWorld';
 import './index.css';
@@ -9,6 +11,9 @@ import  EffectExample  from './EffectExample';
 import  StateExample  from './StateExample';
 import { useEffect } from 'react/cjs/react.production.min';
 import ProgressDIY from "./ProgressDIY";
+import Layout from './Layout';
+import FirstPage from './FirstPage';
+import SecondPage from './SecondPage';
 // import * as serviceWorker from './serviceWorker';
 
 const testFunction =()=>{
@@ -153,9 +158,14 @@ function FriendStatus(props){
 
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <HashRouter>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route path="/first" element={<FirstPage />} />
+        <Route path="/second" element={<SecondPage />} />
+      </Route>
+    </Routes>
+  </HashRouter>,
   document.getElementById('root')
 );
 
