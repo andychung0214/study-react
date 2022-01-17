@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
+.ImageContent{
+  background-color: greenyellow;
+}
