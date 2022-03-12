@@ -14,6 +14,7 @@ import ProgressDIY from "./ProgressDIY";
 import Layout from './Layout';
 import FirstPage from './FirstPage';
 import SecondPage from './SecondPage';
+import GreenProductReport from './GreenProductReport';
 // import * as serviceWorker from './serviceWorker';
 
 const testFunction =()=>{
@@ -190,7 +191,7 @@ const posts = [
 const numbers = [1, 2, 3, 4, 5, 6];
 
 ReactDOM.render(
-  <Blog posts={posts} />,
+  <GreenProductReport />,
   document.getElementById('root')
 );
 
